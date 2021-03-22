@@ -12,7 +12,7 @@ class TodoItem extends StatelessWidget {
     final descriptionLength = todo.description.length;
     return Card(
       color: Colors.blue,
-      elevation: 7,
+      elevation: 3,
       margin: EdgeInsets.only(bottom: 10),
       child: ListTile(
         leading: CircleAvatar(
@@ -21,12 +21,12 @@ class TodoItem extends StatelessWidget {
         ),
         title: Text(
           '''
-${todo.title.substring(0, titleLength < 10 ? titleLength : 10)}${titleLength > 10 ? '...' : ''}''',
+${todo.title.substring(0, titleLength < 12 ? titleLength : 12)}${titleLength > 12 ? '...' : ''}''',
           style: TextStyle(color: Colors.white, fontWeight: FontWeight.w700),
         ),
         subtitle: Text(
           '''
-${todo.description.substring(0, descriptionLength < 20 ? descriptionLength : 20)}${descriptionLength > 20 ? '...' : ''}''',
+${todo.description.substring(0, descriptionLength < 17 ? descriptionLength : 17)}${descriptionLength > 17 ? '...' : ''}''',
           style: TextStyle(color: Colors.white),
         ),
         trailing: FittedBox(
@@ -42,7 +42,10 @@ ${todo.description.substring(0, descriptionLength < 20 ? descriptionLength : 20)
               IconButton(
                 color: Colors.white,
                 icon: Icon(Icons.delete),
-                onPressed: () {},
+                onPressed: () {
+                  todoController.setTodos(() => todoController.todos
+                      .removeWhere((element) => element.id == id));
+                },
                 tooltip: 'Delete',
               ),
             ],

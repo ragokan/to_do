@@ -10,8 +10,7 @@ class TodoMainPage extends StatelessWidget {
   @override
   Widget build(BuildContext context) => CustomScaffold(
         child: Container(
-          height: 200,
-          margin: EdgeInsets.symmetric(horizontal: 7.5),
+          margin: EdgeInsets.all(7.5),
           child: TodoBuilder(
             builder: (todoController) => ListView.builder(
               itemCount: todoController.todos.length,

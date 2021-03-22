@@ -1,13 +1,22 @@
 import 'package:get/get.dart';
 import 'package:to_do/models/todo/todo_model.dart';
+import 'package:faker/faker.dart';
 
 typedef SetCallback = void Function();
 
+Faker faker = Faker();
+
 class TodoController extends GetxController {
-  List<Todo> todos = [
-    Todo(id: 0, title: 'First', description: 'Hoppala Hey'),
-    Todo(id: 1, title: 'Second', description: 'Hey hopp'),
-  ];
+  TodoController() {
+    for (var i = 0; i < 30; i++) {
+      todos.add(Todo(
+          id: i,
+          title: faker.lorem.words(2).join(' '),
+          description: faker.lorem.sentence()));
+    }
+  }
+
+  List<Todo> todos = [];
 
   void setTodos(SetCallback? setCallback) {
     setCallback!();

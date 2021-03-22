@@ -11,7 +11,6 @@ Widget CustomScaffold({
         title: Text(title),
       ),
       body: Center(
-        heightFactor: 1.1,
         child: Container(
           constraints: BoxConstraints(
             maxWidth: 1200,
