@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:to_do/widgets/custom_scaffold.dart';
 import 'package:to_do/widgets/todo/todo_builder.dart';
+import 'package:to_do/widgets/todo/todo_item.dart';
 
 class TodoMainPage extends StatelessWidget {
   static const String routePath = '/';
@@ -10,12 +11,14 @@ class TodoMainPage extends StatelessWidget {
   Widget build(BuildContext context) => CustomScaffold(
         child: Container(
           height: 200,
-          margin: EdgeInsets.all(15),
+          margin: EdgeInsets.symmetric(horizontal: 7.5),
           child: TodoBuilder(
             builder: (todoController) => ListView.builder(
               itemCount: todoController.todos.length,
-              itemBuilder: (_, index) =>
-                  Text(todoController.todos[index].title),
+              itemBuilder: (_, index) => TodoItem(
+                id: todoController.todos[index].id,
+                key: ValueKey(todoController.todos[index].id),
+              ),
             ),
           ),
         ),

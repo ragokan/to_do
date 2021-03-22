@@ -10,6 +10,14 @@ Widget CustomScaffold({
       appBar: AppBar(
         title: Text(title),
       ),
-      body: child,
+      body: Center(
+        heightFactor: 1.1,
+        child: Container(
+          constraints: BoxConstraints(
+            maxWidth: 1200,
+          ),
+          child: child,
+        ),
+      ),
       floatingActionButton: floatingActionButton,
     );
