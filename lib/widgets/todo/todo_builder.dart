@@ -1,9 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
-import 'package:to_do/models/todo/todo_model.dart';
 import 'package:to_do/modules/todo/todo_controller.dart';
 
-typedef BuilderCallback = Widget Function(List<Todo> todos);
+typedef BuilderCallback = Widget Function(TodoController todoController);
 typedef TodoFilter = Object Function(TodoController);
 
 GetBuilder TodoBuilder({
@@ -12,5 +11,5 @@ GetBuilder TodoBuilder({
 }) =>
     GetBuilder<TodoController>(
       filter: todoFilter,
-      builder: (todoController) => builder(todoController.todos),
+      builder: (todoController) => builder(todoController),
     );

@@ -1,10 +1,23 @@
 import 'package:flutter/material.dart';
 import 'package:to_do/widgets/custom_scaffold.dart';
+import 'package:to_do/widgets/todo/todo_builder.dart';
 
 class TodoMainPage extends StatelessWidget {
   static const String routePath = '/';
   const TodoMainPage({Key? key}) : super(key: key);
 
   @override
-  Widget build(BuildContext context) => CustomScaffold(child: Text('hey'));
+  Widget build(BuildContext context) => CustomScaffold(
+        child: Container(
+          height: 200,
+          margin: EdgeInsets.all(15),
+          child: TodoBuilder(
+            builder: (todoController) => ListView.builder(
+              itemCount: todoController.todos.length,
+              itemBuilder: (_, index) =>
+                  Text(todoController.todos[index].title),
+            ),
+          ),
+        ),
+      );
 }
