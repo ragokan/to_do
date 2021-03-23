@@ -24,7 +24,7 @@ class AddTodoController extends GetxController {
           id: todoController.todos.length,
           title: titleController.text,
           description: descriptionController.text);
-      todoController.setTodos(() => todoController.todos.add(todo));
+      todoController.setTodos(() => todoController.todos.insert(0, todo));
       Get.back();
     }
   }

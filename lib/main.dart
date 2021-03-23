@@ -16,7 +16,7 @@ class ToDoApp extends StatelessWidget {
       title: kAppTitle,
       initialRoute: initialRoute,
       getPages: routes,
-      theme: ThemeData(primaryColor: Colors.red),
+      theme: ThemeData(primaryColor: Colors.deepOrange),
       debugShowCheckedModeBanner: false,
     );
   }
