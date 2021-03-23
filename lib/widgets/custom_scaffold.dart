@@ -5,10 +5,12 @@ Widget CustomScaffold({
   String title = kAppTitle,
   required Widget child,
   FloatingActionButton? floatingActionButton,
+  Widget? action,
 }) =>
     Scaffold(
       appBar: AppBar(
         title: Text(title),
+        actions: action != null ? [action] : null,
       ),
       body: Center(
         child: Container(

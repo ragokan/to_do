@@ -17,6 +17,7 @@ class ToDoApp extends StatelessWidget {
       initialRoute: initialRoute,
       getPages: routes,
       theme: ThemeData(primaryColor: Colors.red),
+      debugShowCheckedModeBanner: false,
     );
   }
 }
