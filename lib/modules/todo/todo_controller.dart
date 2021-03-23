@@ -1,3 +1,5 @@
+import 'dart:math';
+
 import 'package:get/get.dart';
 import 'package:to_do/models/todo/todo_model.dart';
 import 'package:faker/faker.dart';
@@ -9,10 +11,14 @@ Faker faker = Faker();
 class TodoController extends GetxController {
   TodoController() {
     for (var i = 0; i < 30; i++) {
-      todos.add(Todo(
+      todos.add(
+        Todo(
           id: i,
           title: faker.lorem.words(2).join(' '),
-          description: faker.lorem.sentence()));
+          description: faker.lorem.sentence(),
+          isCompleted: Random().nextBool(),
+        ),
+      );
     }
   }
 

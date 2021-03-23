@@ -8,7 +8,7 @@ class TodoMainPage extends StatelessWidget {
   const TodoMainPage({Key? key}) : super(key: key);
 
   @override
-  Widget build(BuildContext context) => CustomScaffold(
+  Widget build(_) => CustomScaffold(
         child: Container(
           margin: EdgeInsets.all(7.5),
           child: TodoBuilder(
