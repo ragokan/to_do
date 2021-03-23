@@ -19,10 +19,19 @@ class TodoItem extends StatelessWidget {
       elevation: 3,
       margin: EdgeInsets.only(bottom: 10),
       child: Dismissible(
+        direction: DismissDirection.startToEnd,
         onDismissed: (_) =>
             todoController.setTodos(() => todo.isCompleted = !todo.isCompleted),
         background: Card(
+          elevation: 0,
           color: color,
+          child: Container(
+            alignment: Alignment.centerLeft,
+            child: Text(
+              todo.isCompleted ? 'Make Active' : 'Complete',
+              style: TextStyle(color: Colors.white, fontSize: 20),
+            ),
+          ),
         ),
         key: ValueKey(todo.id),
         child: ListTile(

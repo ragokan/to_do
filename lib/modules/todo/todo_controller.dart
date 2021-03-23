@@ -22,7 +22,16 @@ class TodoController extends GetxController {
     }
   }
 
-  List<Todo> todos = [];
+  List<Todo> _todos = [];
+
+  List<Todo> get todos {
+    // Sort options here.
+    return _todos.toList();
+  }
+
+  set todos(List<Todo> todos) {
+    _todos = todos;
+  }
 
   void setTodos(SetCallback? setCallback) {
     setCallback!();
