@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:to_do/config/routes/routes.dart';
+import 'package:to_do/config/theme/theme.dart';
 import 'package:to_do/constants/main.dart';
 import 'package:to_do/modules/todo/todo_controller.dart';
 
@@ -16,7 +17,7 @@ class ToDoApp extends StatelessWidget {
       title: kAppTitle,
       initialRoute: initialRoute,
       getPages: routes,
-      theme: ThemeData(primaryColor: Colors.deepOrange),
+      theme: theme,
       debugShowCheckedModeBanner: false,
     );
   }

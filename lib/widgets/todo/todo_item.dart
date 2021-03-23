@@ -28,7 +28,7 @@ class TodoItem extends StatelessWidget {
           child: Container(
             alignment: Alignment.centerLeft,
             child: Text(
-              todo.isCompleted ? 'Make Active' : 'Complete',
+              todo.isCompleted ? 'Activate Back' : 'Complete',
               style: TextStyle(color: Colors.white, fontSize: 20),
             ),
           ),
