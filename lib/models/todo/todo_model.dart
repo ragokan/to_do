@@ -1,5 +1,3 @@
-import 'dart:convert';
-
 class Todo {
   final int id;
   String title;
@@ -30,8 +28,4 @@ class Todo {
       isCompleted: map['isCompleted'],
     );
   }
-
-  String toJson() => json.encode(toMap());
-
-  factory Todo.fromJson(String source) => Todo.fromMap(json.decode(source));
 }
