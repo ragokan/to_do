@@ -6,11 +6,13 @@ Widget CustomScaffold({
   required Widget child,
   FloatingActionButton? floatingActionButton,
   Widget? action,
+  TabBar? tabbar,
 }) =>
     Scaffold(
       appBar: AppBar(
         title: Text(title),
         actions: action != null ? [action] : null,
+        bottom: tabbar,
       ),
       body: Center(
         child: Container(
