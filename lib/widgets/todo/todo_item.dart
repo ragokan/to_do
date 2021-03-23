@@ -11,14 +11,9 @@ class TodoItem extends StatelessWidget {
   @override
   Widget build(_) {
     var todo = todoController.todos.firstWhere((element) => element.id == id);
-    final titleLength = todo.title.length;
-    final descriptionLength = todo.description.length;
-    final todoTitle =
-        todo.title.substring(0, titleLength < 12 ? titleLength : 12);
-    final todoDescription = todo.description
-        .substring(0, descriptionLength < 17 ? descriptionLength : 17);
+    final themeData = Get.theme!;
     return Card(
-      color: todo.isCompleted ? Colors.grey : Get.theme!.primaryColor,
+      color: todo.isCompleted ? Colors.grey : themeData.primaryColor,
       elevation: 3,
       margin: EdgeInsets.only(bottom: 10),
       child: ListTile(
@@ -26,14 +21,14 @@ class TodoItem extends StatelessWidget {
           backgroundColor: Colors.white,
           child: Text((todo.id + 1).toString(),
               style: TextStyle(
-                  color: Get.theme!.primaryColor, fontWeight: FontWeight.w900)),
+                  color: themeData.primaryColor, fontWeight: FontWeight.w900)),
         ),
         title: Text(
-          '$todoTitle${titleLength > 12 ? '...' : ''}',
+          todo.title,
           style: TextStyle(color: Colors.white, fontWeight: FontWeight.w700),
         ),
         subtitle: Text(
-          '$todoDescription${descriptionLength > 17 ? '...' : ''}',
+          todo.description,
           style: TextStyle(color: Colors.white),
         ),
         trailing: FittedBox(

@@ -12,6 +12,7 @@ class DeleteTodoDialogue extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    final themeData = Get.theme!;
     return AlertDialog(
       content: Text('Are you sure to delete?'),
       actions: [
@@ -19,7 +20,7 @@ class DeleteTodoDialogue extends StatelessWidget {
           onPressed: Get.back,
           child: Text(
             'Cancel',
-            style: TextStyle(color: Get.theme!.primaryColor),
+            style: TextStyle(color: themeData.primaryColor),
           ),
         ),
         TextButton(
@@ -30,7 +31,7 @@ class DeleteTodoDialogue extends StatelessWidget {
           },
           child: Text(
             'Yes',
-            style: TextStyle(color: Get.theme!.primaryColor),
+            style: TextStyle(color: themeData.primaryColor),
           ),
         )
       ],
