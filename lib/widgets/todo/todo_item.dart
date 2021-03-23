@@ -54,7 +54,7 @@ class TodoItem extends StatelessWidget {
                 IconButton(
                   color: Colors.white,
                   icon: Icon(Icons.edit),
-                  onPressed: () {},
+                  onPressed: () => Get.toNamed('/updateTodo/${todo.id}'),
                   tooltip: 'Edit',
                 ),
                 SizedBox(width: 5),
