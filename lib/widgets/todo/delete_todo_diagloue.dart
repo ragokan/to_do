@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
-import 'package:to_do/modules/todo/todo_controller.dart';
+import '../../modules/todo/todo_controller.dart';
 
 class DeleteTodoDialogue extends StatelessWidget {
   const DeleteTodoDialogue({
@@ -14,7 +14,7 @@ class DeleteTodoDialogue extends StatelessWidget {
   Widget build(BuildContext context) {
     final themeData = Get.theme!;
     return AlertDialog(
-      content: Text('Are you sure to delete?'),
+      content: const Text('Are you sure to delete?'),
       actions: [
         TextButton(
           onPressed: Get.back,

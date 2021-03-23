@@ -1,10 +1,10 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:get_storage/get_storage.dart';
-import 'package:to_do/config/routes/routes.dart';
-import 'package:to_do/config/theme/theme.dart';
-import 'package:to_do/constants/main.dart';
-import 'package:to_do/modules/todo/todo_controller.dart';
+import 'config/routes/routes.dart';
+import 'config/theme/theme.dart';
+import 'constants/main.dart';
+import 'modules/todo/todo_controller.dart';
 
 void main() async {
   await GetStorage.init();

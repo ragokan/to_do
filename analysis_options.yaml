@@ -12,20 +12,18 @@ linter:
     - library_names
     - file_names
     - library_prefixes
-    # - constant_identifier_names
-    # - non_constant_identifier_names
     - cancel_subscriptions
     - close_sinks
     - comment_references
     - control_flow_in_finally
     - empty_statements
-    # - prefer_const_constructors
+    - prefer_const_constructors
     - directives_ordering
     - lines_longer_than_80_chars
     - curly_braces_in_flow_control_structures
     - implementation_imports
-    # - avoid_relative_lib_imports
-    # - prefer_relative_imports
+    - avoid_relative_lib_imports
+    - prefer_relative_imports
     - prefer_adjacent_string_concatenation
     - prefer_interpolation_to_compose_strings
     - unnecessary_brace_in_string_interps

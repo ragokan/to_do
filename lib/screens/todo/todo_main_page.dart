@@ -1,10 +1,11 @@
 import 'package:flutter/material.dart';
-import 'package:to_do/modules/todo/todo_view_controller.dart';
-import 'package:to_do/widgets/custom_scaffold.dart';
-import 'package:to_do/widgets/todo/scaffold_add_todo_action.dart';
-import 'package:to_do/widgets/todo/todo_builder.dart';
-import 'package:to_do/widgets/todo/todo_item.dart';
 import 'package:get/get.dart';
+
+import '../../modules/todo/todo_view_controller.dart';
+import '../../widgets/custom_scaffold.dart';
+import '../../widgets/todo/scaffold_add_todo_action.dart';
+import '../../widgets/todo/todo_builder.dart';
+import '../../widgets/todo/todo_item.dart';
 
 class TodoMainPage extends StatelessWidget {
   static const String routePath = '/';
@@ -15,14 +16,14 @@ class TodoMainPage extends StatelessWidget {
     final tabController = Get.put(TodoTabController())!;
 
     return CustomScaffold(
-      action: ScaffoldAddTodoAction(),
+      action: const ScaffoldAddTodoAction(),
       tabbar: TabBar(
         tabs: tabController.tabs,
         controller: tabController.controller,
         indicatorColor: Colors.white,
       ),
       child: Container(
-          margin: EdgeInsets.all(7.5),
+          margin: const EdgeInsets.all(7.5),
           child: TodoBuilder(builder: (todoController) {
             final activeTodos = todoController.todos
                 .where((element) => !element.isCompleted)

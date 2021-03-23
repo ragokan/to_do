@@ -1,21 +1,21 @@
 import 'package:get/get_navigation/get_navigation.dart';
-import 'package:to_do/screens/todo/add_todo_page.dart';
-import 'package:to_do/screens/todo/todo_main_page.dart';
-import 'package:to_do/screens/todo/update_todo_page.dart';
+import '../../screens/todo/add_todo_page.dart';
+import '../../screens/todo/todo_main_page.dart';
+import '../../screens/todo/update_todo_page.dart';
 
 final String initialRoute = '/';
 
 final List<GetPage> routes = [
   GetPage(
     name: TodoMainPage.routePath,
-    page: () => TodoMainPage(),
+    page: () => const TodoMainPage(),
   ),
   GetPage(
     name: AddTodoPage.routePath,
-    page: () => AddTodoPage(),
+    page: () => const AddTodoPage(),
   ),
   GetPage(
     name: UpdateTodoPage.routePath,
-    page: () => UpdateTodoPage(),
+    page: () => const UpdateTodoPage(),
   ),
 ];

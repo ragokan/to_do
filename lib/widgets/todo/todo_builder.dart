@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
-import 'package:to_do/modules/todo/todo_controller.dart';
+import '../../modules/todo/todo_controller.dart';
 
 typedef BuilderCallback = Widget Function(TodoController todoController);
 typedef TodoFilter = Object Function(TodoController);

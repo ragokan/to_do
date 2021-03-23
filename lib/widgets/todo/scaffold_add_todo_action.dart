@@ -1,6 +1,7 @@
-import 'package:get/get.dart';
-import 'package:to_do/screens/todo/add_todo_page.dart';
 import 'package:flutter/material.dart';
+import 'package:get/get.dart';
+
+import '../../screens/todo/add_todo_page.dart';
 
 class ScaffoldAddTodoAction extends StatelessWidget {
   const ScaffoldAddTodoAction({

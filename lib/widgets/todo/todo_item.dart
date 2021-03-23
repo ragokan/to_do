@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/rendering.dart';
 import 'package:get/get.dart';
-import 'package:to_do/modules/todo/todo_controller.dart';
-import 'package:to_do/widgets/todo/delete_todo_diagloue.dart';
+import '../../modules/todo/todo_controller.dart';
+import 'delete_todo_diagloue.dart';
 
 class TodoItem extends StatelessWidget {
   final int id;
@@ -17,7 +17,7 @@ class TodoItem extends StatelessWidget {
     return Card(
       color: color,
       elevation: 3,
-      margin: EdgeInsets.only(bottom: 10),
+      margin: const EdgeInsets.only(bottom: 10),
       child: Dismissible(
         direction: DismissDirection.startToEnd,
         onDismissed: (_) =>
@@ -29,7 +29,7 @@ class TodoItem extends StatelessWidget {
             alignment: Alignment.centerLeft,
             child: Text(
               todo.isCompleted ? 'Activate Back' : 'Complete',
-              style: TextStyle(color: Colors.white, fontSize: 20),
+              style: const TextStyle(color: Colors.white, fontSize: 20),
             ),
           ),
         ),
@@ -42,25 +42,26 @@ class TodoItem extends StatelessWidget {
           ),
           title: Text(
             todo.title,
-            style: TextStyle(color: Colors.white, fontWeight: FontWeight.w700),
+            style: const TextStyle(
+                color: Colors.white, fontWeight: FontWeight.w700),
           ),
           subtitle: Text(
             todo.description,
-            style: TextStyle(color: Colors.white),
+            style: const TextStyle(color: Colors.white),
           ),
           trailing: FittedBox(
             child: Row(
               children: [
                 IconButton(
                   color: Colors.white,
-                  icon: Icon(Icons.edit),
+                  icon: const Icon(Icons.edit),
                   onPressed: () => Get.toNamed('/updateTodo/${todo.id}'),
                   tooltip: 'Edit',
                 ),
-                SizedBox(width: 5),
+                const SizedBox(width: 5),
                 IconButton(
                   color: Colors.white,
-                  icon: Icon(Icons.delete),
+                  icon: const Icon(Icons.delete),
                   onPressed: () => Get.dialog(DeleteTodoDialogue(id: id)),
                   tooltip: 'Delete',
                 ),

@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:to_do/modules/todo/todo_form_controller.dart';
-import 'package:to_do/widgets/todo/todo_form.dart';
+import '../../modules/todo/todo_form_controller.dart';
+import '../../widgets/todo/todo_form.dart';
 
 class AddTodoPage extends StatelessWidget {
   static const String routePath = '/addTodo';

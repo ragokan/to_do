@@ -1,8 +1,8 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
-import 'package:to_do/models/todo/todo_model.dart';
-import 'package:to_do/modules/todo/todo_controller.dart';
+import '../../models/todo/todo_model.dart';
+import 'todo_controller.dart';
 
 enum FormType { ADD, UPDATE }
 
@@ -35,8 +35,8 @@ class TodoFormController {
       Get.showSnackbar(GetBar(
         message: 'Please provide title and description to $formText to_do!',
         isDismissible: true,
-        duration: Duration(seconds: 5),
-        icon: Icon(
+        duration: const Duration(seconds: 5),
+        icon: const Icon(
           Icons.error,
           color: Colors.white,
         ),

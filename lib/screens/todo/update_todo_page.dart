@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
-import 'package:to_do/modules/todo/todo_controller.dart';
-import 'package:to_do/modules/todo/todo_form_controller.dart';
-import 'package:to_do/widgets/todo/todo_form.dart';
+import '../../modules/todo/todo_controller.dart';
+import '../../modules/todo/todo_form_controller.dart';
+import '../../widgets/todo/todo_form.dart';
 
 class UpdateTodoPage extends StatelessWidget {
   static const String routePath = '/updateTodo/:id';

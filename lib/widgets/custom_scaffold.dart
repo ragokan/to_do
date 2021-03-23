@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:to_do/constants/main.dart';
+import '../constants/main.dart';
 
 Widget CustomScaffold({
   String title = kAppTitle,
@@ -16,7 +16,7 @@ Widget CustomScaffold({
       ),
       body: Center(
         child: Container(
-          constraints: BoxConstraints(
+          constraints: const BoxConstraints(
             maxWidth: 1200,
           ),
           child: child,

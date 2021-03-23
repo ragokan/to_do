@@ -1,7 +1,7 @@
 import 'dart:convert';
 import 'package:get/get.dart';
-import 'package:to_do/models/todo/todo_model.dart';
-import 'package:to_do/utils/box.dart';
+import '../../models/todo/todo_model.dart';
+import '../../utils/box.dart';
 
 typedef SetCallback = void Function();
 

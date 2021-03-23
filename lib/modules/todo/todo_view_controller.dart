@@ -4,8 +4,8 @@ import 'package:get/get.dart';
 class TodoTabController extends GetxController
     with SingleGetTickerProviderMixin {
   final List<Tab> tabs = <Tab>[
-    Tab(text: 'Active'),
-    Tab(text: 'Completed'),
+    const Tab(text: 'Active'),
+    const Tab(text: 'Completed'),
   ];
 
   late TabController controller;
