@@ -21,7 +21,6 @@ class TodoMainPage extends StatelessWidget {
       tabbar: TabBar(
         tabs: tabController.tabs,
         controller: tabController.controller,
-        indicatorColor: Colors.white,
       ),
       drawer: CustomDrawer(),
       child: Container(

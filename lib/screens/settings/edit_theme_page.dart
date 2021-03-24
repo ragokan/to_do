@@ -16,7 +16,7 @@ class EditThemePage extends StatelessWidget {
     final colors = themeController.colors;
 
     return CustomScaffold(
-      title: 'cool to_do themes!',
+      title: 'cool to_do colors!',
       child: ListView.builder(
         padding: const EdgeInsets.all(15),
         itemCount: colors.length,

@@ -20,25 +20,41 @@ class ThemeController extends GetxController {
   ];
 
   Color selectedColor = Colors.blue;
+  bool isDarkMode = false;
 
   void setColor(int index) {
     selectedColor = colors[index];
     box.write('color', index);
     setTheme();
+    update();
   }
 
-  void setTheme() {
-    Get.changeTheme(theme(color: selectedColor));
+  void setTheme({bool? isDark}) {
+    isDarkMode = isDark ?? isDarkMode;
+    box.write('isDark', isDarkMode);
+
+    Get.changeTheme(theme());
     update();
+  }
+
+  void getColorTheme() {
+    var colorIndex = box.read<int>('color');
+    if (colorIndex == null) return;
+
+    selectedColor = colors[colorIndex];
+    update();
+  }
+
+  void getMode() {
+    var isDark = box.read<bool>('isDark');
+    isDarkMode = isDark ?? false;
   }
 
   @override
   void onInit() {
     super.onInit();
-    var colorIndex = box.read<int>('color');
-    if (colorIndex == null) return setTheme();
-
-    selectedColor = colors[colorIndex];
+    getMode();
+    getColorTheme();
     setTheme();
   }
 }

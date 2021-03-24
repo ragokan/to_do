@@ -47,12 +47,10 @@ class TodoItem extends StatelessWidget {
               ),
               title: Text(
                 todo.title,
-                style: const TextStyle(
-                    color: Colors.white, fontWeight: FontWeight.w700),
+                style: const TextStyle(fontWeight: FontWeight.w700),
               ),
               subtitle: Text(
                 todo.description,
-                style: const TextStyle(color: Colors.white),
               ),
               trailing: FittedBox(
                 child: Row(

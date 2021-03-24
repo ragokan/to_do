@@ -9,8 +9,8 @@ import 'modules/todo/todo_controller.dart';
 
 void main() async {
   await GetStorage.init();
-  Get.put(todoController);
   Get.put(themeController);
+  Get.put(todoController);
   runApp(ToDoApp());
 }
 
