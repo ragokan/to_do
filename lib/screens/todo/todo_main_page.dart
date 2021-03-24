@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 
 import '../../modules/todo/todo_view_controller.dart';
+import '../../widgets/custom_drawer.dart';
 import '../../widgets/custom_scaffold.dart';
 import '../../widgets/todo/scaffold_add_todo_action.dart';
 import '../../widgets/todo/todo_builder.dart';
@@ -22,6 +23,7 @@ class TodoMainPage extends StatelessWidget {
         controller: tabController.controller,
         indicatorColor: Colors.white,
       ),
+      drawer: CustomDrawer(),
       child: Container(
           margin: const EdgeInsets.all(7.5),
           child: TodoBuilder(builder: (todoController) {
