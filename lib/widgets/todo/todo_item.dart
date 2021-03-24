@@ -23,18 +23,23 @@ class TodoItem extends StatelessWidget {
           elevation: 3,
           margin: const EdgeInsets.only(bottom: 10),
           child: Dismissible(
-            direction: DismissDirection.startToEnd,
             onDismissed: (_) => todoController
                 .setTodos(() => todo.isCompleted = !todo.isCompleted),
             background: Card(
               elevation: 0,
               color: color,
-              child: Container(
-                alignment: Alignment.centerLeft,
-                child: Text(
-                  todo.isCompleted ? 'Activate Back' : 'Complete',
-                  style: const TextStyle(color: Colors.white, fontSize: 16),
-                ),
+              child: Row(
+                mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                children: [
+                  Text(
+                    todo.isCompleted ? 'Activate Back' : 'Complete',
+                    style: const TextStyle(color: Colors.white, fontSize: 16),
+                  ),
+                  Text(
+                    todo.isCompleted ? 'Activate Back' : 'Complete',
+                    style: const TextStyle(color: Colors.white, fontSize: 16),
+                  ),
+                ],
               ),
             ),
             key: ValueKey(todo.id),

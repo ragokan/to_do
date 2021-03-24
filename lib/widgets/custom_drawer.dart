@@ -46,6 +46,7 @@ Drawer CustomDrawer() {
                   splashRadius: 20,
                   materialTapTargetSize: MaterialTapTargetSize.padded,
                   value: themeController.isDarkMode,
+                  activeColor: themeController.selectedColor,
                   onChanged: (value) => themeController.setTheme(isDark: value),
                 ),
               ),
