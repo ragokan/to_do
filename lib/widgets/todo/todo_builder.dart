@@ -1,15 +1,14 @@
 import 'package:flutter/material.dart';
-import 'package:get/get.dart';
+import 'package:okito/okito.dart';
+
 import '../../modules/todo/todo_controller.dart';
 
 typedef BuilderCallback = Widget Function(TodoController todoController);
-typedef TodoFilter = Object Function(TodoController);
 
-GetBuilder TodoBuilder({
+OkitoBuilder TodoBuilder({
   required BuilderCallback builder,
-  TodoFilter? todoFilter,
 }) =>
-    GetBuilder<TodoController>(
-      filter: todoFilter,
-      builder: (todoController) => builder(todoController),
+    OkitoBuilder(
+      controller: todoController,
+      builder: () => builder(todoController),
     );

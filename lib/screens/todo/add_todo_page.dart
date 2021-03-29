@@ -7,8 +7,9 @@ class AddTodoPage extends StatelessWidget {
   const AddTodoPage({Key? key}) : super(key: key);
 
   @override
-  Widget build(_) {
-    var todoFormController = TodoFormController(formType: FormType.ADD);
-    return TodoForm(todoFormController);
+  Widget build(BuildContext context) {
+    var todoFormController =
+        TodoFormController(formType: FormType.ADD, context: context);
+    return TodoForm(todoFormController, context);
   }
 }

@@ -1,10 +1,8 @@
 import 'package:flutter/material.dart';
-import '../../modules/theme/theme_controller.dart';
 
 ThemeData theme() {
-  final brightness =
-      themeController.isDarkMode ? Brightness.dark : Brightness.light;
-  final color = themeController.selectedColor;
+  final brightness = Brightness.light;
+  final color = Colors.blue;
   return ThemeData(
     primaryColor: color,
     accentColor: color,

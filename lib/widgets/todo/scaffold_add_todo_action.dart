@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:get/get.dart';
+import 'package:okito/okito.dart';
 
 import '../../screens/todo/add_todo_page.dart';
 
@@ -13,7 +13,8 @@ class ScaffoldAddTodoAction extends StatelessWidget {
     return Padding(
       padding: const EdgeInsets.symmetric(horizontal: 15),
       child: IconButton(
-        onPressed: () => Get.toNamed(AddTodoPage.routePath),
+        onPressed: () =>
+            Okito.of(context).pushNamed(routeName: AddTodoPage.routePath),
         tooltip: 'Add to_do',
         icon: const Icon(
           Icons.add,

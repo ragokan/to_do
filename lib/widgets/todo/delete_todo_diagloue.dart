@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:get/get.dart';
+import 'package:okito/okito.dart';
+
 import '../../modules/todo/todo_controller.dart';
 
 class DeleteTodoDialogue extends StatelessWidget {
@@ -12,12 +13,12 @@ class DeleteTodoDialogue extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    final themeData = Get.theme!;
+    final themeData = Okito.of(context).theme;
     return AlertDialog(
       content: const Text('Are you sure to delete?'),
       actions: [
         TextButton(
-          onPressed: Get.back,
+          onPressed: Okito.of(context).pop,
           child: Text(
             'Cancel',
             style: TextStyle(color: themeData.primaryColor),
@@ -27,7 +28,7 @@ class DeleteTodoDialogue extends StatelessWidget {
           onPressed: () {
             todoController.setTodos(() => todoController.todos
                 .removeWhere((element) => element.id == id));
-            Get.back();
+            Okito.of(context).pop();
           },
           child: Text(
             'Yes',

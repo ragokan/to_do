@@ -1,8 +1,7 @@
 import 'package:flutter/material.dart';
-import 'package:get/get.dart';
 
-class TodoTabController extends GetxController
-    with SingleGetTickerProviderMixin {
+class TodoTabController extends State<StatefulWidget>
+    with SingleTickerProviderStateMixin {
   final List<Tab> tabs = <Tab>[
     const Tab(text: 'Active'),
     const Tab(text: 'Completed'),
@@ -10,9 +9,7 @@ class TodoTabController extends GetxController
 
   late TabController controller;
 
-  @override
   void onInit() {
-    super.onInit();
     controller = TabController(
       vsync: this,
       length: tabs.length,
@@ -20,9 +17,13 @@ class TodoTabController extends GetxController
     );
   }
 
-  @override
   void onClose() {
     controller.dispose();
-    super.onClose();
+  }
+
+  @override
+  Widget build(BuildContext context) {
+    // add widget here
+    throw UnimplementedError();
   }
 }

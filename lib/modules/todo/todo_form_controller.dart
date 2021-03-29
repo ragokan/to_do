@@ -1,6 +1,7 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-import 'package:get/get.dart';
+import 'package:okito/okito.dart';
+
 import '../../models/todo/todo_model.dart';
 import 'todo_controller.dart';
 
@@ -10,11 +11,14 @@ class TodoFormController {
   final titleController = TextEditingController();
   final descriptionController = TextEditingController();
   final FormType formType;
+  final BuildContext context;
   late String formText;
   int? todoId;
 
   TodoFormController({
     required this.formType,
+    required this.context,
+    this.todoId,
   }) {
     formText = formType == FormType.ADD ? 'add' : 'update';
   }
@@ -24,6 +28,7 @@ class TodoFormController {
     required this.todoId,
     required String titleValue,
     required String descriptionValue,
+    required this.context,
   }) {
     titleController.text = titleValue;
     descriptionController.text = descriptionValue;
@@ -32,14 +37,10 @@ class TodoFormController {
 
   void submitForm() {
     if (titleController.text.isEmpty || descriptionController.text.isEmpty) {
-      Get.showSnackbar(GetBar(
-        message: 'Please provide title and description to $formText to_do!',
-        isDismissible: true,
-        duration: const Duration(seconds: 5),
-        icon: const Icon(
-          Icons.error,
-          color: Colors.white,
-        ),
+      Okito.of(context).showSnackbar(
+          snackBar: SnackBar(
+        content:
+            Text('Please provide title and description to $formText to_do!'),
       ));
     } else {
       if (formType == FormType.ADD) {
@@ -57,7 +58,7 @@ class TodoFormController {
         todoController.update();
       }
 
-      Get.back();
+      Okito.of(context).pop();
     }
   }
 }

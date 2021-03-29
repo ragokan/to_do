@@ -1,10 +1,12 @@
 import 'package:flutter/material.dart';
-import 'package:get/get.dart';
+import 'package:okito/okito.dart';
+
 import '../../modules/todo/todo_form_controller.dart';
 import '../custom_scaffold.dart';
 
-Widget TodoForm(TodoFormController todoFormController) => CustomScaffold(
-      title: '${todoFormController.formText.capitalize} to_do',
+Widget TodoForm(TodoFormController todoFormController, BuildContext context) =>
+    CustomScaffold(
+      title: '${todoFormController.formText} to_do',
       child: Container(
           margin: const EdgeInsets.all(30),
           child: Column(
@@ -23,11 +25,11 @@ Widget TodoForm(TodoFormController todoFormController) => CustomScaffold(
               ElevatedButton(
                 onPressed: todoFormController.submitForm,
                 style: ElevatedButton.styleFrom(
-                  primary: Get.theme!.primaryColor,
+                  primary: Okito.of(context).theme.primaryColor,
                   elevation: 3,
                 ),
                 child: Text(
-                  '${todoFormController.formText.capitalize} to_do',
+                  '${todoFormController.formText} to_do',
                 ),
               ),
             ],

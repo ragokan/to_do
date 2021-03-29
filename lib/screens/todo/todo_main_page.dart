@@ -1,8 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:get/get.dart';
 
 import '../../modules/todo/todo_view_controller.dart';
-import '../../widgets/custom_drawer.dart';
 import '../../widgets/custom_scaffold.dart';
 import '../../widgets/todo/scaffold_add_todo_action.dart';
 import '../../widgets/todo/todo_builder.dart';
@@ -14,7 +12,7 @@ class TodoMainPage extends StatelessWidget {
 
   @override
   Widget build(_) {
-    final tabController = Get.put(TodoTabController())!;
+    final tabController = TodoTabController();
 
     return CustomScaffold(
       action: const ScaffoldAddTodoAction(),
@@ -22,7 +20,6 @@ class TodoMainPage extends StatelessWidget {
         tabs: tabController.tabs,
         controller: tabController.controller,
       ),
-      drawer: CustomDrawer(),
       child: Container(
           margin: const EdgeInsets.all(7.5),
           child: TodoBuilder(builder: (todoController) {
