@@ -13,8 +13,7 @@ class ScaffoldAddTodoAction extends StatelessWidget {
     return Padding(
       padding: const EdgeInsets.symmetric(horizontal: 15),
       child: IconButton(
-        onPressed: () =>
-            Okito.of(context).pushNamed(routeName: AddTodoPage.routePath),
+        onPressed: () => Okito.pushNamed(AddTodoPage.routePath),
         tooltip: 'Add to_do',
         icon: const Icon(
           Icons.add,

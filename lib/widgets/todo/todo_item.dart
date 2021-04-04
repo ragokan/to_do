@@ -47,10 +47,16 @@ class TodoItem extends StatelessWidget {
           ),
           title: Text(
             todo.title,
-            style: const TextStyle(fontWeight: FontWeight.w700),
+            style: const TextStyle(
+              fontWeight: FontWeight.w700,
+              color: Colors.white,
+            ),
           ),
           subtitle: Text(
             todo.description,
+            style: const TextStyle(
+              color: Colors.white,
+            ),
           ),
           trailing: FittedBox(
             child: Row(
@@ -58,16 +64,15 @@ class TodoItem extends StatelessWidget {
                 IconButton(
                   color: Colors.white,
                   icon: const Icon(Icons.edit),
-                  onPressed: () => Okito.of(context)
-                      .pushNamed(routeName: '/updateTodo/${todo.id}'),
+                  onPressed: () => Okito.pushNamed('/updateTodo/${todo.id}'),
                   tooltip: 'Edit',
                 ),
                 const SizedBox(width: 5),
                 IconButton(
                   color: Colors.white,
                   icon: const Icon(Icons.delete),
-                  onPressed: () => Okito.of(context)
-                      .showDialog(child: DeleteTodoDialogue(id: id)),
+                  onPressed: () =>
+                      Okito.showDialog(child: DeleteTodoDialogue(id: id)),
                   tooltip: 'Delete',
                 ),
               ],

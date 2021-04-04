@@ -15,7 +15,7 @@ class TodoController extends OkitoController {
     final isNew = box.read<bool>('new') == null;
 
     if (isNew) {
-      box.writeIfNull('new', false);
+      box.write('new', false);
       todos.add(Todo(
           id: 0,
           title: 'To complete this, swipe it to right.',

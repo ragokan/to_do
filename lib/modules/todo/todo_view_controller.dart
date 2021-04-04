@@ -21,9 +21,10 @@ class TodoTabController extends State<StatefulWidget>
     controller.dispose();
   }
 
-  @override
-  Widget build(BuildContext context) {
-    // add widget here
-    throw UnimplementedError();
+  TodoTabController() {
+    onInit();
   }
+
+  @override
+  Widget build(BuildContext context) => const Material();
 }

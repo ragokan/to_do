@@ -102,20 +102,6 @@ packages:
     description: flutter
     source: sdk
     version: "0.0.0"
-  get:
-    dependency: transitive
-    description:
-      name: get
-      url: "https://pub.dartlang.org"
-    source: hosted
-    version: "4.0.0-nullsafety.2"
-  get_storage:
-    dependency: "direct main"
-    description:
-      name: get_storage
-      url: "https://pub.dartlang.org"
-    source: hosted
-    version: "2.0.1"
   image:
     dependency: transitive
     description:
@@ -143,7 +129,7 @@ packages:
       name: okito
       url: "https://pub.dartlang.org"
     source: hosted
-    version: "1.0.2"
+    version: "1.0.7"
   path:
     dependency: transitive
     description:

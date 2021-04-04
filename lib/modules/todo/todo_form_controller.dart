@@ -11,13 +11,11 @@ class TodoFormController {
   final titleController = TextEditingController();
   final descriptionController = TextEditingController();
   final FormType formType;
-  final BuildContext context;
   late String formText;
   int? todoId;
 
   TodoFormController({
     required this.formType,
-    required this.context,
     this.todoId,
   }) {
     formText = formType == FormType.ADD ? 'add' : 'update';
@@ -28,7 +26,6 @@ class TodoFormController {
     required this.todoId,
     required String titleValue,
     required String descriptionValue,
-    required this.context,
   }) {
     titleController.text = titleValue;
     descriptionController.text = descriptionValue;
@@ -37,7 +34,7 @@ class TodoFormController {
 
   void submitForm() {
     if (titleController.text.isEmpty || descriptionController.text.isEmpty) {
-      Okito.of(context).showSnackbar(
+      Okito.showSnackBar(
           snackBar: SnackBar(
         content:
             Text('Please provide title and description to $formText to_do!'),
@@ -58,7 +55,7 @@ class TodoFormController {
         todoController.update();
       }
 
-      Okito.of(context).pop();
+      Okito.pop();
     }
   }
 }

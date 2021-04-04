@@ -13,12 +13,12 @@ class DeleteTodoDialogue extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    final themeData = Okito.of(context).theme;
+    final themeData = Okito.theme!;
     return AlertDialog(
       content: const Text('Are you sure to delete?'),
       actions: [
         TextButton(
-          onPressed: Okito.of(context).pop,
+          onPressed: Okito.pop,
           child: Text(
             'Cancel',
             style: TextStyle(color: themeData.primaryColor),
@@ -28,7 +28,7 @@ class DeleteTodoDialogue extends StatelessWidget {
           onPressed: () {
             todoController.setTodos(() => todoController.todos
                 .removeWhere((element) => element.id == id));
-            Okito.of(context).pop();
+            Okito.pop();
           },
           child: Text(
             'Yes',

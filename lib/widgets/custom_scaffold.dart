@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:okito/okito.dart';
 
 import '../constants/main.dart';
 
