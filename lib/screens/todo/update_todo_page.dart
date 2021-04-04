@@ -11,7 +11,7 @@ class UpdateTodoPage extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    final todoId = int.parse((Okito.arguments! as Map)['id']);
+    final todoId = Okito.arguments! as int;
     final todo =
         todoController.todos.firstWhere((element) => element.id == todoId);
     var todoFormController = TodoFormController.updateForm(
