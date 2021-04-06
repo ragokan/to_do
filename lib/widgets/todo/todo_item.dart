@@ -64,8 +64,7 @@ class TodoItem extends StatelessWidget {
                 IconButton(
                   color: Colors.white,
                   icon: const Icon(Icons.edit),
-                  onPressed: () =>
-                      Okito.pushNamed('/updateTodo', arguments: todo.id),
+                  onPressed: () => Okito.pushNamed('/updateTodo/${todo.id}'),
                   tooltip: 'Edit',
                 ),
                 const SizedBox(width: 5),

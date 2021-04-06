@@ -13,7 +13,7 @@ class DeleteTodoDialogue extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    final themeData = Okito.theme!;
+    final themeData = Okito.theme;
     return AlertDialog(
       content: const Text('Are you sure to delete?'),
       actions: [

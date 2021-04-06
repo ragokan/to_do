@@ -25,7 +25,7 @@ Widget TodoForm(TodoFormController todoFormController, BuildContext context) =>
               ElevatedButton(
                 onPressed: todoFormController.submitForm,
                 style: ElevatedButton.styleFrom(
-                  primary: Okito.theme!.primaryColor,
+                  primary: Okito.theme.primaryColor,
                   elevation: 3,
                 ),
                 child: Text(
