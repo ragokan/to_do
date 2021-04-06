@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/rendering.dart';
 import 'package:okito/okito.dart';
+import '../../config/theme/theme.dart';
 
 import '../../modules/todo/todo_controller.dart';
 import 'delete_todo_diagloue.dart';
@@ -12,7 +13,8 @@ class TodoItem extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     var todo = todoController.todos.firstWhere((element) => element.id == id);
-    final color = todo.isCompleted ? Colors.grey : Colors.blue;
+    final color =
+        todo.isCompleted ? Colors.grey : Okito.use<ThemeProvider>().color;
 
     return Card(
       color: color,

@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:okito/okito.dart';
+import '../config/theme/theme.dart';
 
 typedef VoidFunction = void Function();
 
@@ -8,7 +10,7 @@ Widget CustomListTile({
   required String title,
 }) =>
     Card(
-      color: Colors.blue,
+      color: Okito.use<ThemeProvider>().color,
       margin: const EdgeInsets.symmetric(horizontal: 5, vertical: 10),
       child: ListTile(
         leading: Icon(icon, size: 22, color: Colors.white),

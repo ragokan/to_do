@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
+import 'package:okito/okito.dart';
 
 import '../../modules/todo/todo_view_controller.dart';
+import '../../widgets/custom_drawer.dart';
 import '../../widgets/custom_scaffold.dart';
 import '../../widgets/todo/scaffold_add_todo_action.dart';
 import '../../widgets/todo/todo_builder.dart';
@@ -14,38 +16,43 @@ class TodoMainPage extends StatelessWidget {
   Widget build(_) {
     final tabController = TodoTabController();
 
-    return CustomScaffold(
-      action: const ScaffoldAddTodoAction(),
-      tabbar: TabBar(
-        tabs: tabController.tabs,
-        controller: tabController.controller,
+    return Rockito<AppController>(
+      (_) => CustomScaffold(
+        drawer: CustomDrawer(),
+        action: const ScaffoldAddTodoAction(),
+        tabbar: TabBar(
+          tabs: tabController.tabs,
+          controller: tabController.controller,
+        ),
+        child: Container(
+            margin: const EdgeInsets.all(7.5),
+            child: TodoBuilder(builder: (todoController) {
+              final activeTodos = todoController.todos
+                  .where((element) => !element.isCompleted)
+                  .toList();
+              final completedTodos = todoController.todos
+                  .where((element) => element.isCompleted)
+                  .toList();
+              return TabBarView(
+                  controller: tabController.controller,
+                  children: [
+                    ListView.builder(
+                      itemCount: activeTodos.length,
+                      itemBuilder: (_, index) => TodoItem(
+                        id: activeTodos[index].id,
+                        key: ValueKey(activeTodos[index].id),
+                      ),
+                    ),
+                    ListView.builder(
+                      itemCount: completedTodos.length,
+                      itemBuilder: (_, index) => TodoItem(
+                        id: completedTodos[index].id,
+                        key: ValueKey(completedTodos[index].id),
+                      ),
+                    ),
+                  ]);
+            })),
       ),
-      child: Container(
-          margin: const EdgeInsets.all(7.5),
-          child: TodoBuilder(builder: (todoController) {
-            final activeTodos = todoController.todos
-                .where((element) => !element.isCompleted)
-                .toList();
-            final completedTodos = todoController.todos
-                .where((element) => element.isCompleted)
-                .toList();
-            return TabBarView(controller: tabController.controller, children: [
-              ListView.builder(
-                itemCount: activeTodos.length,
-                itemBuilder: (_, index) => TodoItem(
-                  id: activeTodos[index].id,
-                  key: ValueKey(activeTodos[index].id),
-                ),
-              ),
-              ListView.builder(
-                itemCount: completedTodos.length,
-                itemBuilder: (_, index) => TodoItem(
-                  id: completedTodos[index].id,
-                  key: ValueKey(completedTodos[index].id),
-                ),
-              ),
-            ]);
-          })),
     );
   }
 }
